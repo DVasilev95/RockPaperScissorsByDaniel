@@ -1,21 +1,38 @@
-function rockPaperScissors(input) {
+function rockPaperScissors(playerTurn) {
     const colors = require('colors');
     colors.enable()
     const rock = "Rock";
     const paper = "Paper";
     const scissors = "Scissors";
-    let playerTurn = '';
-    if (input == 'r' || input == 'rock') {
-        playerTurn = rock
-    } else if (input == 'p' || input == 'paper') {
-        playerTurn = paper
-    } else if (input == 's' || input == 'scissors') {
-        playerTurn = scissors
-    } else {
-        console.log('Invalid Input. Try Again...');
-        return;
+
+    let playerRandomNumber = Math.floor(Math.random() * 3) + 1
+
+    switch (playerRandomNumber) {
+        case 1:
+            playerTurn = rock;
+            break;
+        case 2:
+            playerTurn = paper;;
+            break;
+        case 3:
+            playerTurn = scissors;
+            break;
+        default:
+            console.log('Invalid Input. Try Again...');
     }
     console.log(`You choose ${playerTurn}`.blue);
+
+    // if (playerTurn === 'r' || playerTurn === 'rock') {
+    //     playerTurn = rock
+    // } else if (playerTurn === 'p' || playerTurn === 'paper') {
+    //     playerTurn = paper
+    // } else if (playerTurn === 's' || playerTurn === 'scissors') {
+    //     playerTurn = scissors
+    // } else {
+    //     console.log('Invalid Input. Try Again...');
+    //     return;
+    // }
+    // console.log(`You choose ${playerTurn}`.blue);
 
     let computerRandomNumber = Math.floor(Math.random() * 3) + 1
     let computerTurn = '';
@@ -40,9 +57,11 @@ function rockPaperScissors(input) {
     } else {
         console.log('This game was a draw!'.yellow);
     }
-
+    
 }
-rockPaperScissors("paper")
+rockPaperScissors();
+
+
 
 
 
