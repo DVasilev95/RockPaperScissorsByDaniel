@@ -1,2 +1,1 @@
-# RockPaperScissorsByDaniel
-This is simple console game "Rock Paper Scissors".
+# The "Rock - Paper - Scissors" Game
